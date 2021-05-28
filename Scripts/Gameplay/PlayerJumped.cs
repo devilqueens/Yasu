@@ -4,7 +4,7 @@ using Platformer.Mechanics;
 namespace Platformer.Gameplay
 {
     /// <summary>
-    /// Fired when the player performs a Jump.
+    /// Se ejecuta cuando el player hace animación de salto.
     /// </summary>
     /// <typeparam name="PlayerJumped"></typeparam>
     public class PlayerJumped : Simulation.Event<PlayerJumped>

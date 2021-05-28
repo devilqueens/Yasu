@@ -4,7 +4,7 @@ using Platformer.Mechanics;
 namespace Platformer.Gameplay
 {
     /// <summary>
-    /// Fired when the player character lands after being airborne.
+    /// Se ejecuta cuando el player aterriza.
     /// </summary>
     /// <typeparam name="PlayerLanded"></typeparam>
     public class PlayerLanded : Simulation.Event<PlayerLanded>

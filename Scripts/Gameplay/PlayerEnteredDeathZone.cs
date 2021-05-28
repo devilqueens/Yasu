@@ -5,7 +5,7 @@ using Platformer.Model;
 namespace Platformer.Gameplay
 {
     /// <summary>
-    /// Fired when a player enters a trigger with a DeathZone component.
+    /// Se ejecuta cuando el jugador entra en DeathZone.
     /// </summary>
     /// <typeparam name="PlayerEnteredDeathZone"></typeparam>
     public class PlayerEnteredDeathZone : Simulation.Event<PlayerEnteredDeathZone>

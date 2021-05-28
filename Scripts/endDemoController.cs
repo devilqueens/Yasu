@@ -5,22 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class endDemoController : MonoBehaviour
 {
+    //Declaracion de gameobjects manuales
     public GameObject m_fondo = null;
     public GameObject m_agradecimientos = null;
     public GameObject m_clickToMainMenu = null;
 
+    //Declaracion de float tiempo
     public float timeNow = 0f;
-    // Start is called before the first frame update
+    
+
     void Start()
     {
-        LeanTween.alpha(m_fondo, 0f, 0f);
+
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+        //iniciar tiempo
         timeNow += Time.deltaTime;
 
+        //Animación 
         LeanTween.alpha(m_fondo, 1f, 2f);
         if(timeNow > 2f)
         {
@@ -31,7 +36,8 @@ public class endDemoController : MonoBehaviour
             m_clickToMainMenu.SetActive(true);
             if (Input.GetMouseButtonDown(0))
             {
-                SceneManager.LoadScene(1);
+                //Escena MainMenu
+                SceneManager.LoadScene("MainMenu");
             }
         }
     }

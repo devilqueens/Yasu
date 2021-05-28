@@ -4,7 +4,7 @@ using Platformer.Mechanics;
 namespace Platformer.Gameplay
 {
     /// <summary>
-    /// Fired when the Jump Input is deactivated by the user, cancelling the upward velocity of the jump.
+    /// Se ejecuta cuando el salto es desactivado por el usuario, cancelando la velocidad vertical del salto.
     /// </summary>
     /// <typeparam name="PlayerStopJump"></typeparam>
     public class PlayerStopJump : Simulation.Event<PlayerStopJump>

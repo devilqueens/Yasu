@@ -7,29 +7,33 @@ using UnityEngine;
 namespace Platformer.Gameplay
 {
     /// <summary>
-    /// Fired when the player has died.
+    /// Se ejecuta cuando el player "muere".
     /// </summary>
     /// <typeparam name="PlayerDeath"></typeparam>
     public class PlayerDeath : Simulation.Event<PlayerDeath>
     {
+        //Llama al controlador del modelo de plataforma.
         PlatformerModel model = Simulation.GetModel<PlatformerModel>();
 
         public override void Execute()
         {
+            //Declaramos al player
             var player = model.player;
+
+            //Si esta vivo el player se le declara muerto, se desactiva el control, y las camaras dejan de seguirlo
             if (player.health.IsAlive)
             {
                 player.health.Die();
                 model.virtualCamera.m_Follow = null;
                 model.virtualCamera.m_LookAt = null;
-                // player.collider.enabled = false;
-                player.controlEnabled = false;
 
+                //Ejecuta sonido ouch de player
                 if (player.audioSource && player.ouchAudio)
                     player.audioSource.PlayOneShot(player.ouchAudio);
+
+                //Ejecutar animacion de daño y cambiar bool de muerte a true
                 player.animator.SetTrigger("hurt");
                 player.animator.SetBool("dead", true);
-                Simulation.Schedule<PlayerSpawn>(2);
             }
         }
     }
